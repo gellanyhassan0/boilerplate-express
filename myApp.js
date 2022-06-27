@@ -38,6 +38,15 @@ else{
 
 });
 
+app.get('/now', function(req,res, next){
+  
+  next();
+}, function(req, res){
+ var time =  new Date()
+  console.log('time'+time);
+  res.json({'time': time});
+}
+       );
 
 
 
