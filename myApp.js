@@ -3,7 +3,12 @@ let app = express();
 require('dotenv').config();
 var bodyParser = require('body-parser');
 
+/** body parser and get data from post */
 app.use(bodyParser.urlencoded({extended: false}))
+app.post('/name', (req, res) => {
+  let name = req.body.first + ' ' + req.body.last;
+  res.json({name: name});
+});
 
 //console.log("Hello World") 
 
