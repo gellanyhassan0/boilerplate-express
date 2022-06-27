@@ -4,17 +4,15 @@ let app = express();
 
 //console.log("Hello World")
 
-var str = "Hello Express"
+//var str = "Hello Express"
+
+var homepage = __dirname + "/views/index.html";
 
 app.get('/', function(req, res) {
-  res.send(str);
+  //res.send(str + "\n");
+  res.sendFile(homepage);
 });
 
-var absolutePath = __dirname + /views/index.html
-
-app.get("/", function(req, res){ 
-    res.sendfile(absolutePath);
-});
 
 
 
