@@ -48,6 +48,13 @@ app.get('/now', function(req,res, next){
 }
        );
 
+app.get("/:word/echo", (req, res) => {
+  let word = req.params.word
+  
+  let jsonObj = {echo: word,echo: word};
+  res.send(jsonObj);
+});
+
 
 
 
