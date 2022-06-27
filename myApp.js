@@ -2,8 +2,18 @@ let express = require('express');
 let app = express();
 require('dotenv').config();
 
+//console.log("Hello World") 
 
-//console.log("Hello World")
+app.use((req, res, next) => {
+
+ let string = `${req.method} ${req.path} - ${req.ip}`
+ console.log(string) 
+   
+  next();
+
+});
+
+
 
 //var str = "Hello Express"
 
