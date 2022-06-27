@@ -47,7 +47,7 @@ app.get('/now', function(req,res, next){
   res.json({'time': time});
 }
        );
-
+//:word/echo
 app.get("/:word/echo", (req, res) => {
   let word = req.params.word
   
@@ -55,6 +55,16 @@ app.get("/:word/echo", (req, res) => {
   res.send(jsonObj);
 });
 
+//actual_request_URL: 'name?first=5461&last=4561'
+//https://boilerplate-express.gellany.repl.co/name?first=5461&last=4561
+///name?first=<firstname>&last=<lastname>
+app.get('/name', (req, res) => {
+  let first = req.query.first;
+  let last = req.query.last;
+  
+  let jsonObj = { name: `${first} ${last}` };
+  res.send(jsonObj);
+  });
 
 
 
