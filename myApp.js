@@ -10,6 +10,11 @@ app.get('/', function(req, res) {
   res.send(str);
 });
 
+var absolutePath = __dirname + /views/index.html
+
+app.get("/", function(req, res){ 
+    res.sendfile(absolutePath);
+});
 
 
 
